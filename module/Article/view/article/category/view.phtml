@@ -1,0 +1,17 @@
+﻿<?php
+ $title = 'Articles in '.$category->name;
+ $this->headTitle($title);
+ ?>
+ <a class="btn btn-default" href="/">Back Home</a>
+ <h2 class="page-header"><?php echo $this->escapeHtml($title); ?></h2>
+
+
+
+
+<ul class="list-group">
+ <?php foreach ($articles as $article) : ?>
+
+   <li class="list-group-item"><a href="/article/view/<?php echo $article->id;?>"><?php echo $article->title; ?></a></li>
+<?php endforeach; ?>
+
+</ul>

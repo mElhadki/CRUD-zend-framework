@@ -1,0 +1,25 @@
+﻿<?php
+
+ $title = 'Edit article';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <?php
+ $form->setAttribute('action', $this->url('article', array('action' => 'edit','id'=>$this->id)));
+ $form->prepare();
+
+ echo $this->form()->openTag($form);
+ echo $this->formHidden($form->get('id'));
+ echo '<label>Title: </label>';
+ echo $this->formRow($form->get('title'));
+ echo'<br/><br/>';
+ echo '<label>Catgory: </label>';
+ echo $this->formRow($form->get('category_id'));
+ echo'<br/><br/>';
+ echo '<label>Body: </label>';
+ echo $this->formRow($form->get('body'));
+ echo'<br/><br/>';
+ echo '<label>Keywords: </label>';
+ echo $this->formRow($form->get('keywords'));
+ echo $this->formSubmit($form->get('submit'));
+ echo $this->form()->closeTag();

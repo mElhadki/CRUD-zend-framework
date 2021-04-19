@@ -1,0 +1,14 @@
+﻿<?php
+ $title = $article->title;
+ $this->headTitle($title);
+ ?>
+ <a class="btn btn-default" href="/category/view/<?php echo $article->category_id; ?>">Back to category</a>
+ <h2 class="page-header"><?php echo $this->escapeHtml($title); ?></h2>
+
+
+<div class="article-body">
+
+ <?php echo $article->body; ?>
+ <br/><hr>
+ <h6><strong>Keywords :</strong> <?php echo $article->keywords; ?> </h6>
+</div>

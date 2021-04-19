@@ -1,0 +1,25 @@
+<?php
+ $title = 'Welcome To Kbase';
+ $this->headTitle($title);
+ ?>
+ <h2 class="page-header"><?php echo $this->escapeHtml($title); ?></h2>
+
+
+<h3>Choose a category :</h3>
+<ul class="list-group">
+ <?php foreach ($categories as $category) : ?>
+
+   <li class="list-group-item"><a href="/category/view/<?php echo $category->id;?>"><?php echo $category->name; ?></a></li>
+<?php endforeach; ?>
+
+</ul>
+
+<h3>Recent Articles :</h3>
+<ul class="list-group">
+ <?php foreach ($articles as $article) : ?>
+
+   <li class="list-group-item"><a href="/article/view/<?php echo $article->id;?>"><?php echo $article->title; ?></a></li>
+<?php endforeach; ?>
+
+</ul>
+

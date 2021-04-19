@@ -1,0 +1,28 @@
+<?php
+ $title = 'My Articls';
+ $this->headTitle($title);
+ ?>
+ <h2 class="page-header"><?php echo $this->escapeHtml($title); ?></h2>
+ <p>
+     <a href="<?php echo $this->url('article', array('action'=>'add'));?>">Add new article</a>
+ </p>
+
+ <table class="table">
+ <tr>
+     <th>Title</th>
+     <th>&nbsp;</th>
+ </tr>
+ <?php foreach ($articles as $article) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($article->title);?></td>
+     <td>
+         <a href="<?php echo $this->url('article',
+             array('action'=>'view', 'id' => $article->id));?>">View</a>
+        <a href="<?php echo $this->url('article',
+             array('action'=>'edit', 'id' => $article->id));?>">Edit</a>
+         <a href="<?php echo $this->url('article',
+             array('action'=>'delete', 'id' => $article->id));?>">Delete</a>
+     </td>
+ </tr>
+ <?php endforeach; ?>
+ </table>
